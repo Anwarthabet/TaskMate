@@ -21,6 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'username',
+        'sign_up_date',
+        'last_login',
+        'account_status',
+        'profile_picture',
+        'role',
+      
     ];
 
     /**
@@ -41,8 +48,23 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
+            'sign_up_date' => 'datetime',
             'password' => 'hashed',
+            'last_login' => 'datetime',
+
         ];
     }
+    public function  isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+    public function isActive(): bool
+    {
+        return $this->account_status === 'active';
+    }
+    public function ProfilePictureUrl(): ?string
+    {
+        return $this->profile_picture ? asset('storage/' . $this->profile_picture) : null;
+    }
+
 }
