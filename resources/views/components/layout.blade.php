@@ -5,36 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Mata</title>
-    <link 
-    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" 
-    rel="stylesheet">
-    {{-- استدعاء الملفات عبر Vite --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
+
 </head>
 
-<body>
-    <div>
-        <nav class="flex justify-between items-center p-4 bg-sky-700/100 text-white"  >
-         
-        <div>
-           
+<body class="bg-gray-50 font-sans h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center p-6 bg-gradient-to-r from-sky-600 to-indigo-600 text-white shadow-lg">
+        <div class="text-2xl font-extrabold tracking-tight">
+            Task Mata
         </div>
-      
-        <div>
+        <div class="space-x-6 text-lg">
             @auth
-<a href="#">Dashboard</a>
+                <a href="#" class="hover:text-gray-200 transition duration-300">Dashboard</a>
             @endauth
             @guest
-              <a href="#">Sign Up</a>
-              <a href="#">Log In</a>
+                <a href="#" class="hover:text-gray-200 transition duration-300">Sign Up</a>
+                <a href="#" class="hover:text-gray-200 transition duration-300">Log In</a>
             @endguest
         </div>
-        </nav>
-    </div>
+    </nav>
 
-    <div class="max-w-6xl mx-auto mt-8">
-        {{ $slot }}
-    </div>
+        <div class="flex-grow p-6">
+            
+            {{ $slot }}
+    
+        </div>
+
+    <!-- Footer -->
+    <footer class="p-6 bg-gray-100 text-center text-gray-600">
+        &copy; 2025 Task Mata. All rights reserved.
+    </footer>
+
 </body>
 
 </html>
