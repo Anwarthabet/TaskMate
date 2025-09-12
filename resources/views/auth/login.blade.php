@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="min-h-screen flex items-center justify-center bg-gradient-to-br ">
+    <div class=" flex items-top justify-center justify bg-gradient-to-br py-30hg px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md">
             
             <h2 class="text-3xl font-bold text-center text-sky-700 mb-6">Login</h2>
