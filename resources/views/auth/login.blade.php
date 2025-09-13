@@ -1,5 +1,5 @@
 <x-layout>
-    <div class=" flex items-top justify-center justify bg-gradient-to-br py-30hg px-4 sm:px-6 lg:px-8">
+    <div class="min-h-screen bg-gray-50 flex items-center justify-center px-4 bg-gradient-to-br py-30hg px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md">
             
             <h2 class="text-3xl font-bold text-center text-sky-700 mb-6">Login</h2>
@@ -18,15 +18,25 @@
             <form method="POST" action="{{ route('login') }}" class="space-y-4">
                 @csrf
                 <div>
-                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
-                    <input type="email" id="email" name="email" required autofocus value="{{ old('email') }}" 
-                        class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400">
+                          <x-forms.input 
+                          id="email"
+                        name="email" 
+                        label="Your Name" 
+                        type="eimail" 
+                        placeholder="Enter your email" 
+                        required
+                    />
                 </div>
 
                 <div>
-                    <label for="password" class="block text-gray-700 font-semibold mb-2">Password</label>
-                    <input type="password" id="password" name="password" required
-                        class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400">
+                    <x-forms.input 
+                        id="password"
+                        name="password" 
+                        label="Password" 
+                        type="password" 
+                        placeholder="Enter your password" 
+                        required
+                    />
                 </div>
 
                 <div class="flex items-center justify-between">
