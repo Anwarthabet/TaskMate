@@ -1,9 +1,10 @@
 <x-layout>
-    <div class="max-w-7xl mx-auto py-8">
+    <div class="max-w-7xl mx-auto py-8 text-gray-800">
 
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold text-gray-800">Projects</h2>
-            <a href="{{ route('projects.create') }}" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition">
+         
+            <a href="{{ route('projects.create') }}" class=" bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">
                 + New Project
             </a>
         </div>
@@ -28,7 +29,7 @@
                     @foreach($projects as $project)
                         <tr>
                             <td class="px-6 py-4">{{ $project->name }}</td>
-                            <td class="px-6 py-4">{{ $project->owner->username ?? 'N/A' }}</td>
+                            <td class="px-6 py-4">{{ $project->owner->name ?? 'N/A' }}</td>
                             <td class="px-6 py-4 capitalize">{{ $project->status }}</td>
                             <td class="px-6 py-4 text-right space-x-2">
                                 <a href="{{ route('projects.edit', $project) }}" class="text-blue-600 hover:underline">Edit</a>
