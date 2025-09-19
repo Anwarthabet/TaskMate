@@ -3,7 +3,7 @@
 
         {{-- Title --}}
         <div class="text-center mb-8">
-            <h2 class="text-3xl font-extrabold text-gray-900">Create New Project</h2>
+            <h2 class="text-3xl font-extrabold text-gray-900">Create  Project</h2>
         </div>
 
         {{-- Validation Errors --}}

@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Project extends Model
 {
     use HasFactory;
+
+
+
+    
     protected $fillable = ['name', 'description','owner_id', 'status'];
     public function tasks()
     {
