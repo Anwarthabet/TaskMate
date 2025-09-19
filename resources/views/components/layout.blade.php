@@ -10,13 +10,13 @@
 
 
 </head>
-<body class="bg-gray-50 font-sans  from-sky-600 h-screen flex to-indigo-600 text-black from-sky-600">
+<body class="bg-gray-50 font-sans  from-sky-600 h-screen flex to-indigo-600 text-white from-sky-600">
 
     <!-- Sidebar -->
     <aside class="w-45 bg-linear-to-r from-cyan-500 to-blue-500 shadow-lg flex flex-col">
  <!-- Logo -->
     <div class="h-16 flex items-center justify-center font-bold text-xl border-b">
-        TaskMate
+        TaskMate 
     </div>
 
     <!-- User Info -->

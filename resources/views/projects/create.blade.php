@@ -1,10 +1,9 @@
 <x-layout>
-    <div class="max-w-2xl mx-auto py-10 px-6">
+    <div class="max-w-2xl mx-auto py-10 px-6 text-gray-800">
 
         {{-- Title --}}
         <div class="text-center mb-8">
             <h2 class="text-3xl font-extrabold text-gray-900">Create New Project</h2>
-            <p class="text-gray-500 mt-2">Fill in the details below to add a new project</p>
         </div>
 
         {{-- Validation Errors --}}
@@ -27,7 +26,7 @@
             <x-forms.input 
                 id="name"
                 name="name" 
-                label="Project Name" 
+                label="" 
                 type="text" 
                 placeholder="Enter your Project Name"
                 value="{{ old('name') }}"
@@ -38,7 +37,7 @@
             <x-forms.input 
                 id="description"
                 name="description" 
-                label="Project Description" 
+                label="" 
                 type="text" 
                 placeholder="Enter your Project Description"
                 value="{{ old('description') }}"
@@ -61,7 +60,7 @@
                 label="Owner">
                 @foreach($users as $user)
                     <option value="{{ $user->id }}" {{ old('owner_id')==$user->id ? 'selected' : '' }}>
-                        {{ $user->username }}
+                        {{ $user->name }}
                     </option>
                 @endforeach
             </x-forms.select>
@@ -72,10 +71,9 @@
                    class="px-4 py-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100 transition">
                     Cancel
                 </a>
-                <button type="submit" 
-                        class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold shadow transition">
+               <x-forms.button type="submit" class=" bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">
                     Create Project
-                </button>
+                </x-forms.button>
             </div>
         </form>
     </div>

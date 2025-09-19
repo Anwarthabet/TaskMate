@@ -47,10 +47,10 @@
                     {{-- <a href="{{ route('password.request') }}" class="text-sky-600 hover:underline text-sm">Forgot Password?</a> --}}
                 </div>
 
-                <button type="submit" class="w-full bg-sky-600 text-white py-3 rounded-xl font-bold hover:bg-sky-500 transition duration-300">
+                <x-forms.button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">
                     Login
-                </button>
-            </form>
+          </x-forms.button>
+                </form>
 
             {{-- <p class="text-center mt-4 text-gray-500">Don't have an account? 
                 <a href="{{ route('register') }}" class="text-sky-600 font-semibold hover:underline">Register</a>
