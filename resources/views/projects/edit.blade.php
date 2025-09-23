@@ -1,5 +1,6 @@
 <x-layout>
-    <div class="max-w-lg mx-auto py-8">
+        <div class="max-w-2xl mx-auto py-10 px-6 text-gray-800">
+
         <h2 class="text-2xl font-bold text-gray-800 mb-6">Edit Project</h2>
 
         @if ($errors->any())
@@ -69,8 +70,10 @@
             <div class="flex justify-end">
                 <x-forms.button type="submit" class=" bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">
                     Update Project
-                    <x-forms.button>
+                </x-forms.button>
             </div>
+   
+</div>
+
         </form>
-    </div>
 </x-layout>

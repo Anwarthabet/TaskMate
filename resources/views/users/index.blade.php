@@ -1,8 +1,6 @@
 <x-layout>
-
-  
         <!-- Users Table Section -->
-        <section class="max-w-6xl mx-auto mt-10">
+        <section class="max-w-6xl mx-auto mt-10 text-gray-500">
             <div class="overflow-x-auto bg-white shadow rounded-xl">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
