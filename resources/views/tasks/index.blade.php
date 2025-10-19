@@ -46,7 +46,7 @@
                                 @endif
                             </td>
                             <td class="px-6 py-4 text-right space-x-2">
-                                <a href="" class="text-blue-600 hover:underline">Edit</a>
+                            <a href="{{ route('tasks.edit', $task) }}" class="text-blue-600 hover:underline">Edit</a>
                                 <form action="" method="POST" class="inline">
                                     @csrf
                                     @method('DELETE')

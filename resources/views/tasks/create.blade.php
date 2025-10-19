@@ -26,7 +26,7 @@
             <x-forms.select id="status" name="status" label="">
                 <option value="pending" {{ old('status') == 'pending' ? 'selected' : '' }}>Pending</option>
                 <option value="in_progress" {{ old('status') == 'in_progress' ? 'selected' : '' }}>In Progress</option>
-                <option value="done" {{ old('status') == 'done' ? 'selected' : '' }}>Completed</option>
+                <option value="completed" {{ old('status') == 'completed' ? 'selected' : '' }}>Completed</option>
             </x-forms.select>
             <!--Due Date Field -->
             <x-forms.datetime accesskey="due_date" name="due_date" label="" aria-placeholder="Due date"

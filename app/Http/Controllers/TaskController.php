@@ -37,10 +37,10 @@ class TaskController extends Controller
             'title'=> 'required|string|max:255',
             'description'=> 'nullable|string',
             'file'=> 'nullable|file|mimes:jpg,png,pdf,docx|max:2048',
-            'status'=> 'required|in:pending,in-progress,completed',
+            'status'=> 'required|in:pending,in_progress,Completed',
             'due_date'=> 'nullable|date',
             'project_id'=> 'required|exists:projects,id',
-            'assigned_to'=> 'required|exists:users,id',
+            'assigned_to'=> 'nullable',
 
         ]);
 
@@ -49,18 +49,16 @@ class TaskController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Task $task)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Task $task)
     {
+        $tasks = Task::all();
+                $projects=Project::all();
+                $user=User::all();
+
+
+        return view('tasks.edit', ['task' => $task, 'tasks' => $tasks, 'projects'=> $projects, 'users'=> $user]);
         //
     }
 
@@ -69,7 +67,21 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        
+        $request->validate([
+            'title'=> 'required|string|max:255',
+            'description'=> 'nullable|string',
+            'file'=> 'nullable|file|mimes:jpg,png,pdf,docx|max:2048',
+            'status'=> 'required|in:pending,in_progress,Completed',
+            'due_date'=> 'nullable|date',
+            'project_id'=> 'required|exists:projects,id',
+            'assigned_to'=> 'nullable',
+
+        ]);
+
+        $task->update($request->all());
+
+        return redirect()->route('tasks.index')->with('success', 'Task updated successfully.');
     }
 
     /**
@@ -77,6 +89,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully.');
     }
 }
