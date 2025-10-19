@@ -49,7 +49,7 @@
                 👥 <span class="mr-2">Users</span>
             </a>
 
-            <a href="" 
+            <a href="{{ route('tasks.index') }}"
                class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-200 transition {{ request()->routeIs('tasks.*') ? 'bg-gray-200 font-semibold' : '' }}">
                 📋 <span class="mr-2">Tasks</span>
             </a>
@@ -74,10 +74,6 @@
             {{ $slot }}
         </main>
 
-        <!-- Footer -->
-        <footer class="p-6 bg-gray-100 text-center text-gray-600">
-            &copy; 2025 TaskMate. All rights reserved.
-        </footer>
     </div>
 
 </body>
