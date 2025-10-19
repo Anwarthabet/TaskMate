@@ -28,7 +28,7 @@ class ProjectController extends Controller
             'owner_id' => 'required|exists:users,id',
         ]);
 
-        Project::create($request->all());
+        Project::create(attributes: $request->all());
 
         return redirect()->route('projects.index')->with('success', 'Project created successfully.');
     }

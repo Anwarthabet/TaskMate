@@ -1,7 +1,9 @@
 <?php
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TaskController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +21,8 @@ Route::resource('users', UserController::class)->middleware('auth');
 use App\Http\Controllers\DashboardController;
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
-Route::resource('projects', ProjectController::class)->middleware('auth');
+Route::resource(name: 'projects', controller: ProjectController::class)->middleware(middleware: 'auth');
+Route::resource(name: 'tasks', controller: TaskController::class)->middleware(middleware: 'auth');
 
 
 
